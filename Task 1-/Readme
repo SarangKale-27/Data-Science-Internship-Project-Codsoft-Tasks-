@@ -23,3 +23,59 @@ The analysis showed that 'Sex' and 'Pclass' were major predictors of survival, r
 
 
 ---
+
+
+# Titanic Dataset: Data Cleaning & Preprocessing
+
+![Titanic](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1200px-RMS_Titanic_3.jpg)
+
+This project demonstrates a complete data cleaning and preprocessing pipeline for the Titanic dataset, preparing it for machine learning tasks.
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Dataset Description](#dataset-description)
+- [Cleaning Steps](#cleaning-steps)
+- [How to Run](#how-to-run)
+- [Results](#results)
+- [Dependencies](#dependencies)
+
+## Project Overview
+This project covers:
+- Handling missing values
+- Converting categorical features
+- Normalizing numerical features
+- Outlier detection and treatment
+
+## Dataset Description
+The Titanic dataset contains information about 891 passengers including:
+- Survival status (Survived)
+- Passenger class (Pclass)
+- Age, Sex, Fare
+- Embarkation port (Embarked)
+- Cabin information
+
+Original dataset from [Kaggle](https://www.kaggle.com/c/titanic/data)
+
+## Cleaning Steps
+
+### 1. Missing Value Treatment
+- Age: Filled with median value
+- Embarked: Filled with most frequent value (mode)
+- Cabin: Dropped (too many missing values)
+
+### 2. Categorical Encoding
+- Sex: Label encoded (male=0, female=1)
+- Embarked: One-hot encoded
+
+### 3. Feature Scaling
+- Age and Fare standardized using StandardScaler
+
+### 4. Outlier Handling
+- Fare outliers capped using IQR method
+- Visualized with boxplots before/after treatment
+
+## How to Run
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   pip install pandas numpy matplotlib seaborn scikit-learn
